@@ -4,10 +4,6 @@
  */
 package Interfaz;
 
-/**
- *
- * @author Santiago
- */
 public class Obligatorio2 {
 
     /**
@@ -18,3 +14,5 @@ public class Obligatorio2 {
     }
     
 }
+
+// fgdgvfdgadgraegfadgerdgwergaegear
