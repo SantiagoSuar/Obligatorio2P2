@@ -126,10 +126,12 @@ public class Ventana1 extends javax.swing.JFrame {
         String descripcion=jTxtDescripcion.getText();
         Tematica nuevaTematica= new Tematica(nombre, descripcion);
         if(!miS.seRepiteTematica(nuevaTematica)){
+            String mensaje= "La tematica ha sido agregada";
+            JOptionPane.showMessageDialog(null, mensaje, "Confirmado", JOptionPane.INFORMATION_MESSAGE);
             miS.agregarTematica(nuevaTematica);limpiarTxt();
         }else{
             String mensaje="Error: La tematica ha sido agregada anteriormente.";
-            JOptionPane.showMessageDialog(this, mensaje, "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, mensaje, "Error", JOptionPane.ERROR_MESSAGE);
         }
         limpiarTxt();
             
