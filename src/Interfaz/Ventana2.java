@@ -316,7 +316,8 @@ public class Ventana2 extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, mensaje, "Error", JOptionPane.ERROR_MESSAGE);
         }
         func.limpiarTxt(PnlPos);
-        
+        Ventana3 v3= new Ventana3(pos,miS);
+        v3.setVisible(true);
            }
 
     }//GEN-LAST:event_jButton1ActionPerformed

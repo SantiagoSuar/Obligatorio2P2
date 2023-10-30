@@ -12,6 +12,7 @@ import javax.swing.*;
  *
  * @author Santiago
  */
+
 public class Funcionalidades {
      public static void limpiarTxt(Container container) {
     for (Component c : container.getComponents()) {
@@ -23,6 +24,19 @@ public class Funcionalidades {
             limpiarTxt((Container) c); // Llamada recursiva para limpiar los componentes internos del contenedor
         }
     }
+
+}
+       public static void verificarForm(Container container) {
+    for (Component c : container.getComponents()) {
+        if (c instanceof JTextField) {
+            ((JTextField) c).setText("");
+        } else if (c instanceof JTextArea) {
+            ((JTextArea) c).setText("");
+        } else if (c instanceof Container) {
+            limpiarTxt((Container) c); // Llamada recursiva para limpiar los componentes internos del contenedor
+        }
+    }
+
 }
      
 }

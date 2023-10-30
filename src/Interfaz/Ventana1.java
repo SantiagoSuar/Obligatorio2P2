@@ -144,6 +144,7 @@ public class Ventana1 extends javax.swing.JFrame {
             String mensaje= "La tematica ha sido agregada";
             JOptionPane.showMessageDialog(null, mensaje, "Confirmado", JOptionPane.INFORMATION_MESSAGE);
             miS.agregarTematica(nuevaTematica);
+            
             Funcionalidades.limpiarTxt(jPanel2);
         }else{
             String mensaje="Error: La tematica ha sido agregada anteriormente.";

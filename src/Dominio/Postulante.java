@@ -54,8 +54,9 @@ public class Postulante extends Persona{
         return nivelTemas;
     }
     
-    public void NivelTemas(HashMap<Tematica, Integer> nivelTemas) {
-        this.nivelTemas = nivelTemas;
+    public void agregarNivelTemas(Tematica tematica, Integer valor) {
+        nivelTemas.put(tematica, valor);
     }
+    
 
 }

@@ -30,4 +30,12 @@ public class Tematica {
         Tematica t=(Tematica) o;
         return this.getNombre().equals(t.getNombre());
     }
+
+    
+    @Override
+    public String toString(){
+
+        return nombre;
+    }
+    
 }

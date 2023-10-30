@@ -1,6 +1,6 @@
 package Interfaz;
 
-import Dominio.Sistema;
+import Dominio.*;
 import javax.swing.JFrame;
 
 public class Obligatorio2 {
@@ -18,8 +18,7 @@ public class Obligatorio2 {
         frame.pack();
         frame.setVisible(true);
         v2.setVisible(true);
-        Ventana3 v3 = new Ventana3(miS);
-        v3.setVisible(true);
+        
     }
 
 }

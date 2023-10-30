@@ -10,14 +10,13 @@ public class Sistema {
     private ArrayList<Puesto> listaPuestos;
     private ArrayList<Evaluador> listaEvaluadores;
     private ArrayList<Entrevista> listaEntrevistas;
-    private HashMap<Tematica, Integer> nivelTemas;
+   
 
     public Sistema() {
         this.listaPostulantes = new ArrayList();
         this.listaTematicas = new ArrayList();
         this.listaPuestos = new ArrayList();
         this.listaEvaluadores = new ArrayList();
-        this.nivelTemas= new HashMap();
     }
 
     public boolean seRepiteCedula(Persona p) {
@@ -102,11 +101,5 @@ public class Sistema {
     public ArrayList<Entrevista> getListaEntrevistas() {
         return listaEntrevistas;
     }
-      public HashMap<Tematica, Integer> getNivelTemas() {
-        return nivelTemas;
-    }
     
-    public void setNivelTemas(Tematica tematica, Integer valor) {
-        nivelTemas.put(tematica, valor);
-    }
 }
