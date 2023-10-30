@@ -18,6 +18,8 @@ public class Obligatorio2 {
         frame.pack();
         frame.setVisible(true);
         v2.setVisible(true);
+        Ventana3 v3 = new Ventana3(miS);
+        v3.setVisible(true);
     }
 
 }
