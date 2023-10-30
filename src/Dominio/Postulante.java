@@ -9,7 +9,7 @@ public class Postulante extends Persona{
     // int tipoTrabajo PONDREMOS LAS OPCIONES DE TRABAJO 1/2/3
     private HashMap<Tematica, Integer> nivelTemas;
     
-    public Postulante(String nombre, String direccion,int cedula,String mail, String telefono,String linkedin,int tipoTrabajo){
+    public Postulante(String nombre, String direccion,String cedula,String mail, String telefono,String linkedin,int tipoTrabajo){
         super(nombre, direccion,cedula);
         this.mail=mail;        
         this.telefono=telefono;

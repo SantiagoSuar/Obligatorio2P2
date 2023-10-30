@@ -1,6 +1,7 @@
 package Interfaz;
 
 import Dominio.Sistema;
+import javax.swing.JFrame;
 
 public class Obligatorio2 {
 
@@ -9,10 +10,16 @@ public class Obligatorio2 {
      */
     public static void main(String[] args) {
         Sistema miS = new Sistema();
-        Ventana1 v1= new Ventana1(miS);
+        Ventana1 v1 = new Ventana1(miS);
         v1.setVisible(true);
+        Ventana2 v2 = new Ventana2(miS);
+        JFrame frame = new JFrame();
+        frame.add(v2);
+        frame.pack();
+        frame.setVisible(true);
+        v2.setVisible(true);
     }
-    
+
 }
 
 // fgdgvfdgadgraegfadgerdgwergaegear

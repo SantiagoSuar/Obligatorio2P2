@@ -16,16 +16,32 @@ public class Sistema {
         this.listaPuestos = new ArrayList();
         this.listaEvaluadores = new ArrayList();
     }
-
-    public void agregarPostulante(Postulante p) {
-        listaPostulantes.add(p);
+    
+    
+   
+      public boolean seRepiteCedula(Persona p) {
+        boolean seRepite = false;
+        if (!listaPostulantes.isEmpty()) {
+            for (int i = 0; i < listaPostulantes.size(); i++) {
+                if (p.getCedula().equalsIgnoreCase(listaPostulantes.get(i).getCedula())) {
+                    seRepite = true;
+                }
+            }
+        }
+        return seRepite;
     }
 
+    public void agregarPostulante(Postulante p) {
+        if (!seRepiteCedula(p)) {
+            listaPostulantes.add(p);
+        }
+    }
+    
     public boolean seRepiteTematica(Tematica t) {
         boolean seRepite = false;
         if (!listaTematicas.isEmpty()) {
             for (int i = 0; i < listaTematicas.size(); i++) {
-                if (t.getNombre().equals(listaTematicas.get(i).getNombre())) {
+                if (t.getNombre().equalsIgnoreCase(listaTematicas.get(i).getNombre())) {
                     seRepite = true;
                 }
             }
