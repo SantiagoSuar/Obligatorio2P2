@@ -50,11 +50,13 @@ public class Postulante extends Persona{
         this.tipoTrabajo = tipoTrabajo;
     }
 
-    public HashMap<Tematica, Integer> getNivelTemas() {
-        return nivelTemas;
-    }
-    
+public String getNivelTemas(Tematica tematica, Integer valor) {
+    return tematica + "(" + valor + ")";
+}
+
+   
     public void agregarNivelTemas(Tematica tematica, Integer valor) {
+        
         nivelTemas.put(tematica, valor);
     }
     

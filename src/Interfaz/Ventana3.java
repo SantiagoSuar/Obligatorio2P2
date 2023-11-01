@@ -5,6 +5,7 @@
 package Interfaz;
 
 import Dominio.*;
+import java.util.HashMap;
 
 /**
  *
@@ -39,7 +40,7 @@ public class Ventana3 extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
+        panexp = new javax.swing.JTextPane();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
@@ -76,7 +77,9 @@ public class Ventana3 extends javax.swing.JFrame {
             }
         });
 
-        jScrollPane1.setViewportView(jTextPane1);
+        panexp.setEditable(false);
+        panexp.setBackground(new java.awt.Color(255, 255, 255));
+        jScrollPane1.setViewportView(panexp);
 
         jButton3.setText("Cancelar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -162,16 +165,21 @@ public class Ventana3 extends javax.swing.JFrame {
     private void ComboTemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboTemaActionPerformed
 
     }//GEN-LAST:event_ComboTemaActionPerformed
+    HashMap<String, Tematica> tematicasMap = new HashMap<>();
     public void tematicasCombos() {
-        for (Tematica tem : miS.getListaTematicas()) {
-            pos.agregarNivelTemas(tem, 0);
-            ComboTema.addItem(tem.getNombre());
+        for (Tematica tematica : miS.getListaTematicas()) {
+            ComboTema.addItem(tematica.getNombre());
+            tematicasMap.put(tematica.getNombre(), tematica);
         }
+
     }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Tematica elementoSeleccionado = (Tematica) ComboTema.getSelectedItem();
+        String nombre = (String) ComboTema.getSelectedItem();
+        Tematica elementoSeleccionado = tematicasMap.get(nombre);
         int valorSeleccionado = (int) SpnNivel.getValue();
-        pos.agregarNivelTemas(elementoSeleccionado,valorSeleccionado);
+        pos.agregarNivelTemas(elementoSeleccionado, valorSeleccionado);
+       String intValue = pos.getNivelTemas(elementoSeleccionado, valorSeleccionado);
+        panexp.setText(intValue);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -198,6 +206,6 @@ public class Ventana3 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextPane jTextPane1;
+    private javax.swing.JTextPane panexp;
     // End of variables declaration//GEN-END:variables
 }
