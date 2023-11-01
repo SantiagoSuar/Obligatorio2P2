@@ -20,7 +20,7 @@ public class Obligatorio2 {
 //        frame.add(v2);
 //        frame.pack();
 //        frame.setVisible(true);
-//        v2.setVisible(true);
+//        v2.setVisible(true);g
         
     }
 
