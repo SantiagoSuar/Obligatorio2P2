@@ -3,9 +3,9 @@ package Dominio;
 public class Persona {
     private String nombre;    
     private String direccion;
-    private String cedula;
+    private int cedula;
 
-    public Persona(String nombre, String direccion, String cedula){
+    public Persona(String nombre, String direccion, int cedula){
         this.nombre=nombre;
         this.direccion=direccion;
         this.cedula=cedula;
@@ -27,16 +27,21 @@ public class Persona {
         this.direccion = direccion;
     }
 
-    public String getCedula() {
+    public int getCedula() {
         return cedula;
     }
 
-    public void setCedula(String cedula) {
+    public void setCedula(int cedula) {
         this.cedula = cedula;
     }
     @Override
     public boolean equals(Object o){
         Persona p=(Persona) o;
-        return this.getCedula().equals(p.getCedula());
+        return this.getCedula()==p.getCedula();
+    }
+     @Override
+    public String toString(){
+
+        return nombre+"("+cedula+")";
     }
 }

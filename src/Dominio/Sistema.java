@@ -10,32 +10,53 @@ public class Sistema {
     private ArrayList<Puesto> listaPuestos;
     private ArrayList<Evaluador> listaEvaluadores;
     private ArrayList<Entrevista> listaEntrevistas;
-   
 
     public Sistema() {
         this.listaPostulantes = new ArrayList();
         this.listaTematicas = new ArrayList();
         this.listaPuestos = new ArrayList();
         this.listaEvaluadores = new ArrayList();
+        this.listaEntrevistas = new ArrayList();
     }
 
     public boolean seRepiteCedula(Persona p) {
         boolean seRepite = false;
         if (!listaPostulantes.isEmpty()) {
-            for (int i = 0; i < getListaPostulantes().size(); i++) {
-                if (p.getCedula().equalsIgnoreCase(getListaPostulantes().get(i).getCedula())) {
+            for (int i = 0; i < getListaPostulantes().size() && !seRepite; i++) {
+                if (p.getCedula() == getListaPostulantes().get(i).getCedula()) {
                     seRepite = true;
                 }
             }
         }
         return seRepite;
     }
-
+   public boolean seRepiteCedulaEva(Persona p) {
+        boolean seRepite = false;
+        if (!listaEvaluadores.isEmpty()) {
+            for (int i = 0; i < getListaEvaluadores().size() && !seRepite; i++) {
+                if (p.getCedula() == getListaEvaluadores().get(i).getCedula()) {
+                    seRepite = true;
+                }
+            }
+        }
+        return seRepite;
+    }
     public boolean seRepiteTematica(Tematica t) {
         boolean seRepite = false;
         if (!listaTematicas.isEmpty()) {
-            for (int i = 0; i < getListaTematicas().size(); i++) {
+            for (int i = 0; i < getListaTematicas().size() && !seRepite; i++) {
                 if (t.getNombre().equalsIgnoreCase(getListaTematicas().get(i).getNombre())) {
+                    seRepite = true;
+                }
+            }
+        }
+        return seRepite;
+    }
+      public boolean seRepitePuesto(Puesto o) {
+        boolean seRepite = false;
+        if (!listaPuestos.isEmpty()) {
+            for (int i = 0; i < getListaPuestos().size() && !seRepite; i++) {
+                if (o.getNombre().equalsIgnoreCase(getListaPuestos().get(i).getNombre())) {
                     seRepite = true;
                 }
             }
@@ -48,7 +69,6 @@ public class Sistema {
             getListaPostulantes().add(p);
         }
     }
-
     public void agregarTematica(Tematica t) {
         if (!seRepiteTematica(t)) {
             getListaTematicas().add(t);
@@ -67,39 +87,30 @@ public class Sistema {
         getListaEntrevistas().add(e);
     }
 
-    /**
-     * @return the listaPostulantes
-     */
+   
     public ArrayList<Postulante> getListaPostulantes() {
         return listaPostulantes;
     }
 
-    /**
-     * @return the listaTematicas
-     */
+ 
     public ArrayList<Tematica> getListaTematicas() {
         return listaTematicas;
     }
 
-    /**
-     * @return the listaPuestos
-     */
+  
     public ArrayList<Puesto> getListaPuestos() {
         return listaPuestos;
     }
 
-    /**
-     * @return the listaEvaluadores
-     */
+  
     public ArrayList<Evaluador> getListaEvaluadores() {
         return listaEvaluadores;
     }
 
-    /**
-     * @return the listaEntrevistas
-     */
+    
     public ArrayList<Entrevista> getListaEntrevistas() {
         return listaEntrevistas;
     }
-    
+
+
 }
