@@ -178,7 +178,9 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jBtnRegistroTematicaActionPerformed
 
     private void jBtnHistoriaPostulanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnHistoriaPostulanteActionPerformed
-        // TODO add your handling code here:
+        JFrame frame = new JFrame("CONSULTA PUESTO");
+        HistoriaPostulante v = new HistoriaPostulante(frame,true,miS);
+        v.setVisible(true);
     }//GEN-LAST:event_jBtnHistoriaPostulanteActionPerformed
 
     private void jBtnRegistroPostulanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnRegistroPostulanteActionPerformed
