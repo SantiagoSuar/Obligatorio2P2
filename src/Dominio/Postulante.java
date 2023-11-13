@@ -1,8 +1,9 @@
 package Dominio;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Postulante extends Persona {
+public class Postulante extends Persona implements Comparable<Postulante>  {
 
     private String mail;
     private String telefono;
@@ -11,6 +12,7 @@ public class Postulante extends Persona {
     private int totalEntrevistas;
     // int tipoTrabajo PONDREMOS LAS OPCIONES DE TRABAJO 1/2/3
     private HashMap<Tematica, Integer> nivelTemas;
+  
 
     public Postulante(String nombre, String direccion, int cedula, String mail, String telefono, String linkedin, int tipoTrabajo) {
         super(nombre, direccion, cedula);
@@ -83,5 +85,12 @@ public class Postulante extends Persona {
     public void setTotalEntrevistas(int totalEntrevistas) {
         this.totalEntrevistas = totalEntrevistas;
     }
-   
+
+    @Override
+    public int compareTo(Postulante o) {
+       this.
+    }
+
+    
+
 }

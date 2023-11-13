@@ -192,11 +192,15 @@ public class HistoriaPostulante extends javax.swing.JDialog {
 
         jLabel16.setText("Buscar :");
 
-        jTextField1.setText("jTextField1");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
 
-        jButton1.setText("jButton1");
+        jButton1.setText("Buscar");
 
-        jButton2.setText("jButton2");
+        jButton2.setText("Resetear");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -219,6 +223,12 @@ public class HistoriaPostulante extends javax.swing.JDialog {
         });
         jTable1.setSelectionBackground(new java.awt.Color(255, 51, 51));
         jScrollPane2.setViewportView(jTable1);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(0).setHeaderValue("Nro");
+            jTable1.getColumnModel().getColumn(1).setHeaderValue("Evaluador");
+            jTable1.getColumnModel().getColumn(2).setHeaderValue("Puntaje");
+            jTable1.getColumnModel().getColumn(3).setHeaderValue("Comentarios");
+        }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -282,6 +292,11 @@ public class HistoriaPostulante extends javax.swing.JDialog {
     private void panexp1ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_panexp1ValueChanged
         DatosPos();
     }//GEN-LAST:event_panexp1ValueChanged
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        String palabra= jTextField1.getText();
+        
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PnlPos;

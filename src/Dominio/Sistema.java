@@ -1,6 +1,7 @@
 package Dominio;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 
 public class Sistema {
@@ -10,6 +11,7 @@ public class Sistema {
     private ArrayList<Puesto> listaPuestos;
     private ArrayList<Evaluador> listaEvaluadores;
     private ArrayList<Entrevista> listaEntrevistas;
+    private  ArrayList<Postulante> candidatos;
 
     public Sistema() {
         this.listaPostulantes = new ArrayList();
@@ -17,6 +19,8 @@ public class Sistema {
         this.listaPuestos = new ArrayList();
         this.listaEvaluadores = new ArrayList();
         this.listaEntrevistas = new ArrayList();
+        this.candidatos = new ArrayList();
+
     }
 
     public boolean seRepiteCedula(Persona p) {
@@ -110,6 +114,14 @@ public class Sistema {
     
     public ArrayList<Entrevista> getListaEntrevistas() {
         return listaEntrevistas;
+    }
+    
+     public ArrayList<Postulante> getCandidatos() {
+        return candidatos;
+    }
+     
+    public void ordenarPostulantes(){
+        Collections.sort(getCandidatos());
     }
 
 

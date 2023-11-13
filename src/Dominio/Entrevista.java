@@ -16,19 +16,58 @@ public class Entrevista {
         this.numero=numero;
     }
 
-    /**
-     * @return the numero
-     */
+
     public int getNumero() {
         return numero;
     }
 
-    /**
-     * @param numero the numero to set
-     */
+
     public void setNumero(int numero) {
         this.numero = numero;
     }
+
+
+    public Postulante getPos() {
+        return pos;
+    }
+
+ 
+    public void setPos(Postulante pos) {
+        this.pos = pos;
+    }
+
+  
+    public Evaluador getEva() {
+        return eva;
+    }
+
+  
+    public void setEva(Evaluador eva) {
+        this.eva = eva;
+    }
+
+  
+    public int getPuntaje() {
+        return puntaje;
+    }
+
+    public void setPuntaje(int puntaje) {
+        this.puntaje = puntaje;
+    }
+
+  
+    public String getComentarios() {
+        return comentarios;
+    }
+
+  
+    public void setComentarios(String comentarios) {
+        this.comentarios = comentarios;
+    }
+
+  
+
+    
     
     
 }
