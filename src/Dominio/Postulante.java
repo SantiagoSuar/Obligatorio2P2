@@ -9,10 +9,9 @@ public class Postulante extends Persona implements Comparable<Postulante>  {
     private String telefono;
     private String linkedin;
     private int tipoTrabajo;
-    private int totalEntrevistas;
-    private Entrevista ultimaEntrevista;
     // int tipoTrabajo PONDREMOS LAS OPCIONES DE TRABAJO 1/2/3
     private HashMap<Tematica, Integer> nivelTemas;
+     private ArrayList<Entrevista> listaEntrevistas;
   
 
     public Postulante(String nombre, String direccion, int cedula, String mail, String telefono, String linkedin, int tipoTrabajo) {
@@ -22,7 +21,8 @@ public class Postulante extends Persona implements Comparable<Postulante>  {
         this.linkedin = linkedin;
         this.tipoTrabajo = tipoTrabajo;
         this.nivelTemas = new HashMap();
-        this.totalEntrevistas=0;
+        this.listaEntrevistas = new ArrayList();
+
     }
 
     public String getMail() {
@@ -79,25 +79,18 @@ public class Postulante extends Persona implements Comparable<Postulante>  {
 
 }
 
-    public int getTotalEntrevistas() {
-        return totalEntrevistas;
-    }
-
-    public void setTotalEntrevistas(int totalEntrevistas) {
-        this.totalEntrevistas = totalEntrevistas;
-    }
- 
     @Override
     public int compareTo(Postulante o) {
-        return o.getUltimaEntrevista().getPuntaje()- this.getUltimaEntrevista().getPuntaje();
+       return o.getListaEntrevistas().get(o.getListaEntrevistas().size() - 1).getPuntaje() - this.getListaEntrevistas().get(this.getListaEntrevistas().size() - 1).getPuntaje();
+
     }
 
-    public Entrevista getUltimaEntrevista() {
-        return ultimaEntrevista;
+     public void agregarEntrevista(Entrevista e) {
+        getListaEntrevistas().add(e);
     }
 
-    public void setUltimaEntrevista(Entrevista ultimaEntrevista) {
-        this.ultimaEntrevista = ultimaEntrevista;
+    public ArrayList<Entrevista> getListaEntrevistas() {
+        return listaEntrevistas;
     }
 
     

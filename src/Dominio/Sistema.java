@@ -2,8 +2,7 @@ package Dominio;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
+
 
 public class Sistema {
 
@@ -11,16 +10,16 @@ public class Sistema {
     private ArrayList<Tematica> listaTematicas;
     private ArrayList<Puesto> listaPuestos;
     private ArrayList<Evaluador> listaEvaluadores;
-    private ArrayList<Entrevista> listaEntrevistas;
     private ArrayList<Postulante> candidatos;
+    private boolean newSist;
 
-    public Sistema() {
+    public Sistema(boolean a) {
         this.listaPostulantes = new ArrayList();
         this.listaTematicas = new ArrayList();
         this.listaPuestos = new ArrayList();
         this.listaEvaluadores = new ArrayList();
-        this.listaEntrevistas = new ArrayList();
         this.candidatos = new ArrayList();
+        newSist=true;
 
     }
 
@@ -92,9 +91,7 @@ public class Sistema {
         getListaEvaluadores().add(e);
     }
 
-    public void agregarEntrevista(Entrevista e) {
-        getListaEntrevistas().add(e);
-    }
+   
 
     public ArrayList<Postulante> getListaPostulantes() {
         return listaPostulantes;
@@ -112,9 +109,6 @@ public class Sistema {
         return listaEvaluadores;
     }
 
-    public ArrayList<Entrevista> getListaEntrevistas() {
-        return listaEntrevistas;
-    }
 
     public ArrayList<Postulante> getCandidatos() {
         return candidatos;
@@ -123,6 +117,7 @@ public class Sistema {
     public void ordenarPostulantes() {
         Collections.sort(getCandidatos());
     }
+ 
 
     public ArrayList<String> hashmapToArrylist(Postulante pos) {
         ArrayList<String> list = new ArrayList<String>();

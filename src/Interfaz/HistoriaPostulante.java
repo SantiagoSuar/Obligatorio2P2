@@ -5,6 +5,9 @@
 package Interfaz;
 
 import Dominio.*;
+import java.awt.*;
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -12,6 +15,7 @@ import Dominio.*;
  */
 public class HistoriaPostulante extends javax.swing.JDialog {
 
+    DefaultTableModel modelo;
     Sistema miS;
 
     public HistoriaPostulante(java.awt.Frame parent, boolean modal, Sistema miS) {
@@ -19,7 +23,13 @@ public class HistoriaPostulante extends javax.swing.JDialog {
         initComponents();
         this.miS = miS;
         panexp1.setListData(miS.getListaPostulantes().toArray());
-        
+        modelo = new DefaultTableModel();
+        modelo.addColumn("Nro");
+        modelo.addColumn("Evaluador");
+        modelo.addColumn("Puntaje");
+        modelo.addColumn("Comentarios");
+        this.jTable1.setModel(modelo);
+
     }
 
     public void DatosPos() {
@@ -38,6 +48,15 @@ public class HistoriaPostulante extends javax.swing.JDialog {
             jLabelFor.setText("Mixto");
         }
         jList1.setListData(miS.hashmapToArrylist(pos).toArray());
+        String[] ar = new String[4];
+        for (Entrevista e : pos.getListaEntrevistas()) {
+            ar[0] = "" + e.getNumero();
+            ar[1] = e.getEva().toString();
+            ar[2] = "" + e.getPuntaje();
+            ar[3] = e.getComentarios();
+            modelo.addRow(ar);
+        }
+
     }
 
     @SuppressWarnings("unchecked")
@@ -202,6 +221,11 @@ public class HistoriaPostulante extends javax.swing.JDialog {
         });
 
         jButton1.setText("Buscar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Resetear");
 
@@ -293,14 +317,28 @@ public class HistoriaPostulante extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void panexp1ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_panexp1ValueChanged
+        Funcionalidades.limpiarTabla(jTable1);
         DatosPos();
-        jTable1.setModel(miS.getListaEntrevistas());
+
     }//GEN-LAST:event_panexp1ValueChanged
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        String palabra = jTextField1.getText();
 
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+      Postulante pos = (Postulante) panexp1.getSelectedValue();
+    String palabra = jTextField1.getText();
+
+    for (int i = 0; i < modelo.getRowCount(); i++) {
+        String comentarios = (String) modelo.getValueAt(i, 3);
+
+        if (comentarios.contains(palabra)) {
+           
+        }
+    }
+
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PnlPos;

@@ -6,10 +6,12 @@ import javax.swing.JFrame;
 public class Menu extends javax.swing.JFrame {
 
     private Sistema miS;
+    private boolean nuevoSis;
     private Funcionalidades func;
-    public Menu(Sistema miS, Funcionalidades func) {
+    public Menu(Sistema miS, Funcionalidades func, boolean nuevoSis) {
         this.miS=miS;
         this.func=func;
+        this.nuevoSis=nuevoSis;
         initComponents();
         
     }
@@ -83,6 +85,11 @@ public class Menu extends javax.swing.JFrame {
         });
 
         jBtnConsultaTematica.setText("Consultar por Tematica");
+        jBtnConsultaTematica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnConsultaTematicaActionPerformed(evt);
+            }
+        });
 
         jBtnConsultaPuesto.setText("Consultar para Puesto");
         jBtnConsultaPuesto.addActionListener(new java.awt.event.ActionListener() {
@@ -191,7 +198,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void jBtnConsultaPuestoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConsultaPuestoActionPerformed
       JFrame frame = new JFrame("CONSULTA PUESTO");
-        ConsultaPuesto v = new ConsultaPuesto(frame,true,miS);
+        ConsultaPuesto v = new ConsultaPuesto(frame,true,miS,nuevoSis);
         v.setVisible(true);
     }//GEN-LAST:event_jBtnConsultaPuestoActionPerformed
 
@@ -222,6 +229,12 @@ public class Menu extends javax.swing.JFrame {
         IngreesoPuesto v = new IngreesoPuesto(frame,true,miS);
         v.setVisible(true);
     }//GEN-LAST:event_jBtnRegistroPuestoActionPerformed
+
+    private void jBtnConsultaTematicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConsultaTematicaActionPerformed
+       JFrame frame = new JFrame("CONSULTA Tematica");
+        ConsultaTematica v = new ConsultaTematica(frame,true,miS);
+        v.setVisible(true);
+    }//GEN-LAST:event_jBtnConsultaTematicaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

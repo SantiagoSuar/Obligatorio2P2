@@ -55,4 +55,5 @@ public class Entrevista {
     public void setComentarios(String comentarios) {
         this.comentarios = comentarios;
     }
+    
 }

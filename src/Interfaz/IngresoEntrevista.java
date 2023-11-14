@@ -99,14 +99,13 @@ public class IngresoEntrevista extends javax.swing.JDialog {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Postulante postulante = (Postulante) jList1.getSelectedValue();
         Evaluador evaluador = (Evaluador) jList2.getSelectedValue();
-        int tot=postulante.getTotalEntrevistas()+1;
-        postulante.setTotalEntrevistas(tot);
+        int tot= postulante.getListaEntrevistas().size()+1;
+        
         int puntaje = (int) jSpinner1.getValue();
         String comentarios = jTextField1.getText();
         
         Entrevista entrevista = new Entrevista(postulante, evaluador, puntaje, comentarios,tot);
-        postulante.setUltimaEntrevista(entrevista);
-        miS.agregarEntrevista(entrevista);
+        postulante.agregarEntrevista(entrevista);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed

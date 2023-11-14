@@ -2,14 +2,16 @@
 package Interfaz;
 
 import Dominio.*;
+import Grabacion.ArchivoGrabacion;
 
 public class ConsultaPuesto extends javax.swing.JDialog {
     private Sistema miS;
-
-    public ConsultaPuesto(java.awt.Frame parent, boolean modal, Sistema miS) {
+    private boolean nuevoSis;
+    public ConsultaPuesto(java.awt.Frame parent, boolean modal, Sistema miS,boolean nuevoSis) {
         super(parent, modal);
         initComponents();
         this.miS = miS;
+        this.nuevoSis=nuevoSis;
         panexp1.setListData(miS.getListaPuestos().toArray());
     }
 
@@ -132,14 +134,20 @@ public class ConsultaPuesto extends javax.swing.JDialog {
     }//GEN-LAST:event_jBtnAgregarActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        Puesto pues = (Puesto) panexp1.getSelectedValue();
+        ArchivoGrabacion ag = new ArchivoGrabacion("Consultas.txt",nuevoSis);
+        ag.grabarLinea(pues.getNombre());
+        for(Postulante pos : miS.getCandidatos()){
+        ag.grabarLinea(pos.getNombre()+ " "+ pos.getCedula()+ " "+ pos.getMail());
+        }
+        ag.cerrar();
     }//GEN-LAST:event_jButton1ActionPerformed
     public void postulanteNivel(Puesto p, int valor) {
         for (Postulante pos : miS.getListaPostulantes()) {
             boolean nivelesSuficientes = true;
 
             try {
-                if (pos.getTipoTrabajo() == p.getTipoPuesto() && pos.getTotalEntrevistas() >= 1) {
+                if (pos.getTipoTrabajo() == p.getTipoPuesto() && pos.getListaEntrevistas().size()>= 1) {
 
                     for (Tematica tema : p.getTemasRequeridos()) {
                         if (pos.getNivelTemas().get(tema) < valor) {
