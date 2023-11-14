@@ -149,7 +149,7 @@ public class VentanaNivelesTemas extends javax.swing.JDialog {
         Tematica elementoSeleccionado = tematicasMap.get(nombre);
         int valorSeleccionado = (int) SpnNivel.getValue();
         pos.agregarNivelTemas(elementoSeleccionado, valorSeleccionado);
-        panexp.setListData(hashmapToArrylist().toArray());
+        panexp.setListData(miS.hashmapToArrylist(pos).toArray());
         }
     }//GEN-LAST:event_jBtnAgregarActionPerformed
 
@@ -159,7 +159,7 @@ public class VentanaNivelesTemas extends javax.swing.JDialog {
        int indexAbreParentesis = temat.indexOf("(");
         String clave = temat.substring(0, indexAbreParentesis);
         pos.borrarNivelTemas(clave);
-        panexp.setListData(hashmapToArrylist().toArray());
+        panexp.setListData(miS.hashmapToArrylist(pos).toArray());
        }
     }//GEN-LAST:event_jBtnEliminarActionPerformed
 
@@ -178,15 +178,7 @@ public class VentanaNivelesTemas extends javax.swing.JDialog {
         JOptionPane.showMessageDialog(null, mensaje, "Confirmado", JOptionPane.INFORMATION_MESSAGE);
         
     }//GEN-LAST:event_jBtnRegistrarActionPerformed
-    public ArrayList<String> hashmapToArrylist() {
-        ArrayList<String> list = new ArrayList<String>();
-            for (Tematica key : pos.getNivelTemas().keySet()) {
-            Integer value = pos.getNivelTemas().get(key);
-            String element = key + "(" + value + ")";
-            list.add(element);
-        }
-        return list;
-    }
+
   
     HashMap<String, Tematica> tematicasMap = new HashMap<>();
 

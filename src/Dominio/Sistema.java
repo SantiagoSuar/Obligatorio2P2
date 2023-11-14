@@ -12,7 +12,7 @@ public class Sistema {
     private ArrayList<Puesto> listaPuestos;
     private ArrayList<Evaluador> listaEvaluadores;
     private ArrayList<Entrevista> listaEntrevistas;
-    private  ArrayList<Postulante> candidatos;
+    private ArrayList<Postulante> candidatos;
 
     public Sistema() {
         this.listaPostulantes = new ArrayList();
@@ -35,7 +35,8 @@ public class Sistema {
         }
         return seRepite;
     }
-   public boolean seRepiteCedulaEva(Persona p) {
+
+    public boolean seRepiteCedulaEva(Persona p) {
         boolean seRepite = false;
         if (!listaEvaluadores.isEmpty()) {
             for (int i = 0; i < getListaEvaluadores().size() && !seRepite; i++) {
@@ -46,6 +47,7 @@ public class Sistema {
         }
         return seRepite;
     }
+
     public boolean seRepiteTematica(Tematica t) {
         boolean seRepite = false;
         if (!listaTematicas.isEmpty()) {
@@ -57,7 +59,8 @@ public class Sistema {
         }
         return seRepite;
     }
-      public boolean seRepitePuesto(Puesto o) {
+
+    public boolean seRepitePuesto(Puesto o) {
         boolean seRepite = false;
         if (!listaPuestos.isEmpty()) {
             for (int i = 0; i < getListaPuestos().size() && !seRepite; i++) {
@@ -74,6 +77,7 @@ public class Sistema {
             getListaPostulantes().add(p);
         }
     }
+
     public void agregarTematica(Tematica t) {
         if (!seRepiteTematica(t)) {
             getListaTematicas().add(t);
@@ -92,38 +96,42 @@ public class Sistema {
         getListaEntrevistas().add(e);
     }
 
-   
     public ArrayList<Postulante> getListaPostulantes() {
         return listaPostulantes;
     }
 
- 
     public ArrayList<Tematica> getListaTematicas() {
         return listaTematicas;
     }
 
-  
     public ArrayList<Puesto> getListaPuestos() {
         return listaPuestos;
     }
 
-  
     public ArrayList<Evaluador> getListaEvaluadores() {
         return listaEvaluadores;
     }
 
-    
     public ArrayList<Entrevista> getListaEntrevistas() {
         return listaEntrevistas;
     }
-    
-     public ArrayList<Postulante> getCandidatos() {
+
+    public ArrayList<Postulante> getCandidatos() {
         return candidatos;
     }
-     
-    public void ordenarPostulantes(){
+
+    public void ordenarPostulantes() {
         Collections.sort(getCandidatos());
     }
 
+    public ArrayList<String> hashmapToArrylist(Postulante pos) {
+        ArrayList<String> list = new ArrayList<String>();
+        for (Tematica key : pos.getNivelTemas().keySet()) {
+            Integer value = pos.getNivelTemas().get(key);
+            String element = key + "(" + value + ")";
+            list.add(element);
+        }
+        return list;
+    }
 
 }

@@ -19,6 +19,7 @@ public class HistoriaPostulante extends javax.swing.JDialog {
         initComponents();
         this.miS = miS;
         panexp1.setListData(miS.getListaPostulantes().toArray());
+        
     }
 
     public void DatosPos() {
@@ -36,7 +37,7 @@ public class HistoriaPostulante extends javax.swing.JDialog {
         } else {
             jLabelFor.setText("Mixto");
         }
-
+        jList1.setListData(miS.hashmapToArrylist(pos).toArray());
     }
 
     @SuppressWarnings("unchecked")
@@ -293,6 +294,7 @@ public class HistoriaPostulante extends javax.swing.JDialog {
 
     private void panexp1ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_panexp1ValueChanged
         DatosPos();
+        jTable1.setModel(miS.getListaEntrevistas());
     }//GEN-LAST:event_panexp1ValueChanged
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
