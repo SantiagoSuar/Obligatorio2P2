@@ -10,6 +10,7 @@ public class Postulante extends Persona implements Comparable<Postulante>  {
     private String linkedin;
     private int tipoTrabajo;
     private int totalEntrevistas;
+    private Entrevista ultimaEntrevista;
     // int tipoTrabajo PONDREMOS LAS OPCIONES DE TRABAJO 1/2/3
     private HashMap<Tematica, Integer> nivelTemas;
   
@@ -85,10 +86,18 @@ public class Postulante extends Persona implements Comparable<Postulante>  {
     public void setTotalEntrevistas(int totalEntrevistas) {
         this.totalEntrevistas = totalEntrevistas;
     }
-
+ 
     @Override
     public int compareTo(Postulante o) {
-       this.
+        return o.getUltimaEntrevista().getPuntaje()- this.getUltimaEntrevista().getPuntaje();
+    }
+
+    public Entrevista getUltimaEntrevista() {
+        return ultimaEntrevista;
+    }
+
+    public void setUltimaEntrevista(Entrevista ultimaEntrevista) {
+        this.ultimaEntrevista = ultimaEntrevista;
     }
 
     

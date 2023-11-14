@@ -13,30 +13,32 @@ import Dominio.*;
 public class HistoriaPostulante extends javax.swing.JDialog {
 
     Sistema miS;
-    public HistoriaPostulante(java.awt.Frame parent, boolean modal,Sistema miS) {
+
+    public HistoriaPostulante(java.awt.Frame parent, boolean modal, Sistema miS) {
         super(parent, modal);
         initComponents();
-        this.miS=miS;
+        this.miS = miS;
         panexp1.setListData(miS.getListaPostulantes().toArray());
     }
 
-    public void DatosPos(){
-        Postulante pos=(Postulante)panexp1.getSelectedValue();
+    public void DatosPos() {
+        Postulante pos = (Postulante) panexp1.getSelectedValue();
         jLabelName.setText(pos.getNombre());
-        jLabelCI.setText(""+pos.getCedula());
+        jLabelCI.setText("" + pos.getCedula());
         jLabelDire.setText(pos.getDireccion());
         jLabelTel.setText(pos.getTelefono());
         jLabelMail.setText(pos.getMail());
         jLabelLnk.setText(pos.getLinkedin());
-        if(pos.getTipoTrabajo()==0){
-        jLabelFor.setText("Remoto");
-        }else if(pos.getTipoTrabajo()==1){
-             jLabelFor.setText("Presencial");
-        }else{
+        if (pos.getTipoTrabajo() == 0) {
+            jLabelFor.setText("Remoto");
+        } else if (pos.getTipoTrabajo() == 1) {
+            jLabelFor.setText("Presencial");
+        } else {
             jLabelFor.setText("Mixto");
         }
-       
+
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -277,8 +279,8 @@ public class HistoriaPostulante extends javax.swing.JDialog {
                         .addComponent(jButton1)
                         .addComponent(jButton2)))
                 .addGap(26, 26, 26)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 381, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 149, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(15, 15, 15)
@@ -294,8 +296,8 @@ public class HistoriaPostulante extends javax.swing.JDialog {
     }//GEN-LAST:event_panexp1ValueChanged
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        String palabra= jTextField1.getText();
-        
+        String palabra = jTextField1.getText();
+
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

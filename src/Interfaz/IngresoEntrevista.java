@@ -105,6 +105,7 @@ public class IngresoEntrevista extends javax.swing.JDialog {
         String comentarios = jTextField1.getText();
         
         Entrevista entrevista = new Entrevista(postulante, evaluador, puntaje, comentarios,tot);
+        postulante.setUltimaEntrevista(entrevista);
         miS.agregarEntrevista(entrevista);
     }//GEN-LAST:event_jButton1ActionPerformed
 
