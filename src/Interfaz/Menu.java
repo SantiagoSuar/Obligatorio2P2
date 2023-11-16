@@ -5,18 +5,20 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 public class Menu extends javax.swing.JFrame {
 
     private Sistema miS;
     private boolean nuevoSis;
     private Funcionalidades func;
+
     public Menu(Sistema miS, Funcionalidades func, boolean nuevoSis) {
-        this.miS=miS;
-        this.func=func;
-        this.nuevoSis=nuevoSis;
+        this.miS = miS;
+        this.func = func;
+        this.nuevoSis = nuevoSis;
         initComponents();
-        
+
     }
 
     @SuppressWarnings("unchecked")
@@ -197,63 +199,68 @@ public class Menu extends javax.swing.JFrame {
 
     private void jBtnRegistroTematicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnRegistroTematicaActionPerformed
         JFrame frame = new JFrame("REGISTRO TEMATICA");
-        VentanaRegistrarTematica v = new VentanaRegistrarTematica(frame,true,miS);
+        VentanaRegistrarTematica v = new VentanaRegistrarTematica(frame, true, miS);
         v.setVisible(true);
     }//GEN-LAST:event_jBtnRegistroTematicaActionPerformed
 
     private void jBtnHistoriaPostulanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnHistoriaPostulanteActionPerformed
         JFrame frame = new JFrame("CONSULTA PUESTO");
-        HistoriaPostulante v = new HistoriaPostulante(frame,true,miS);
+        HistoriaPostulante v = new HistoriaPostulante(frame, true, miS);
         v.setVisible(true);
     }//GEN-LAST:event_jBtnHistoriaPostulanteActionPerformed
 
     private void jBtnRegistroPostulanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnRegistroPostulanteActionPerformed
         JFrame frame = new JFrame("ALTA POSTULANTE");
-        VentanaAltaPostulante v = new VentanaAltaPostulante(frame,true,miS,func);
+        VentanaAltaPostulante v = new VentanaAltaPostulante(frame, true, miS, func);
         v.setVisible(true);
     }//GEN-LAST:event_jBtnRegistroPostulanteActionPerformed
 
     private void jBtnConsultaPuestoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConsultaPuestoActionPerformed
-      JFrame frame = new JFrame("CONSULTA PUESTO");
-        ConsultaPuesto v = new ConsultaPuesto(frame,true,miS,nuevoSis);
+        JFrame frame = new JFrame("CONSULTA PUESTO");
+        ConsultaPuesto v = new ConsultaPuesto(frame, true, miS, nuevoSis);
         v.setVisible(true);
     }//GEN-LAST:event_jBtnConsultaPuestoActionPerformed
 
     private void jBtnFinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnFinActionPerformed
-         try {
-        Funcionalidades.crearSistema(miS);
-    } catch (IOException ex) {
-        Logger.getLogger(Inicio.class.getName()).log(Level.SEVERE, null, ex);
-    }
+
+        int opcion = JOptionPane.showConfirmDialog(null, "Desea Salir?", "Confirmacion", JOptionPane.YES_NO_OPTION);
+        if (opcion == JOptionPane.YES_OPTION) {
+            try {
+                Funcionalidades.crearSistema(miS);
+            } catch (IOException ex) {
+                Logger.getLogger(Inicio.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            dispose();
+        }
     }//GEN-LAST:event_jBtnFinActionPerformed
 
     private void jBtnEliminoPostulanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnEliminoPostulanteActionPerformed
-         JFrame frame = new JFrame("BAJA POSTULANTE");
-        VentanaBajaPostulante v = new VentanaBajaPostulante(frame,true,miS);
+        JFrame frame = new JFrame("BAJA POSTULANTE");
+        VentanaBajaPostulante v = new VentanaBajaPostulante(frame, true, miS);
         v.setVisible(true);
     }//GEN-LAST:event_jBtnEliminoPostulanteActionPerformed
 
     private void jBtnRegistroEvaluadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnRegistroEvaluadorActionPerformed
         JFrame frame = new JFrame("ALTA EVALUADOR");
-        RegistroEvaluador v = new RegistroEvaluador(frame,true,miS,func);
+        RegistroEvaluador v = new RegistroEvaluador(frame, true, miS, func);
         v.setVisible(true);
     }//GEN-LAST:event_jBtnRegistroEvaluadorActionPerformed
 
     private void jBtnRegistroEntrevistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnRegistroEntrevistaActionPerformed
         JFrame frame = new JFrame("Ingreso Entrecista");
-        IngresoEntrevista v = new IngresoEntrevista(frame,true,miS,func);
+        IngresoEntrevista v = new IngresoEntrevista(frame, true, miS, func);
         v.setVisible(true);
     }//GEN-LAST:event_jBtnRegistroEntrevistaActionPerformed
 
     private void jBtnRegistroPuestoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnRegistroPuestoActionPerformed
         JFrame frame = new JFrame("Ingreso Puesto");
-        IngreesoPuesto v = new IngreesoPuesto(frame,true,miS);
+        IngreesoPuesto v = new IngreesoPuesto(frame, true, miS);
         v.setVisible(true);
     }//GEN-LAST:event_jBtnRegistroPuestoActionPerformed
 
     private void jBtnConsultaTematicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConsultaTematicaActionPerformed
-       JFrame frame = new JFrame("CONSULTA Tematica");
-        ConsultaTematica v = new ConsultaTematica(frame,true,miS);
+        JFrame frame = new JFrame("CONSULTA Tematica");
+        ConsultaTematica v = new ConsultaTematica(frame, true, miS);
         v.setVisible(true);
     }//GEN-LAST:event_jBtnConsultaTematicaActionPerformed
 

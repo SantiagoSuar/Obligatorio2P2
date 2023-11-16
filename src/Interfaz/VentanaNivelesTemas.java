@@ -78,6 +78,8 @@ public class VentanaNivelesTemas extends javax.swing.JDialog {
 
         jLabel3.setText("Experiencia:");
 
+        SpnNivel.setModel(new javax.swing.SpinnerNumberModel(1, 1, 10, 1));
+
         jScrollPane2.setViewportView(panexp);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

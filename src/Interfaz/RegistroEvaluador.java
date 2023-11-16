@@ -182,7 +182,7 @@ private Funcionalidades func;
         String dire = TxtDire.getText();
         String año= TxtAño.getText();
 
-        if (!verificarForm(pnlEva) && func.verificar(cedula, año, "@", "https://www.linkedin.com")) {
+        if (!verificarForm(pnlEva) && func.verificar(cedula, año, "@", "https://www.linkedin.com") && Integer.parseInt(año)<2023) {
             int cedula2 = Integer.parseInt(cedula);
             int ano2 = Integer.parseInt(año);
             Evaluador eva = new Evaluador(nombre, dire, cedula2,ano2);

@@ -4,6 +4,7 @@
  */
 package Interfaz;
 
+import Dominio.Postulante;
 import Dominio.Sistema;
 import java.awt.*;
 import java.io.FileInputStream;
@@ -11,14 +12,14 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import java.util.Comparator;
 import javax.swing.*;
 import javax.swing.table.*;
+import java.io.Serializable;
+import java.util.Comparator;
 
-/**
- *
- * @author Santiago
- */
-public class Funcionalidades {
+public class Funcionalidades implements Serializable, Comparator<Postulante>  {
 
     public static void limpiarTxt(Container container) {
         for (Component c : container.getComponents()) {
@@ -104,6 +105,12 @@ public class Funcionalidades {
         Sistema miS = (Sistema)datos.readObject();
         return miS;
     }
+              @Override
+  public int compare(Postulante p1, Postulante p2) {
+    int cedulaCompare = Integer.compare(p1.getCedula(), p2.getCedula());
+      return cedulaCompare; 
+    
+  }
         
 
 }

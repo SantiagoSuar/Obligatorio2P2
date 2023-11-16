@@ -2,9 +2,10 @@ package Dominio;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 
-public class Postulante extends Persona implements Comparable<Postulante>, Serializable {
+public class Postulante extends Persona implements Comparable<Postulante>, Serializable  {
 
     private String mail;
     private String telefono;
@@ -79,12 +80,12 @@ public class Postulante extends Persona implements Comparable<Postulante>, Seria
   nivelTemas.remove(t);
 
 }
-
     @Override
     public int compareTo(Postulante o) {
        return o.getListaEntrevistas().get(o.getListaEntrevistas().size() - 1).getPuntaje() - this.getListaEntrevistas().get(this.getListaEntrevistas().size() - 1).getPuntaje();
 
     }
+    
 
      public void agregarEntrevista(Entrevista e) {
         getListaEntrevistas().add(e);
@@ -94,6 +95,5 @@ public class Postulante extends Persona implements Comparable<Postulante>, Seria
         return listaEntrevistas;
     }
 
-    
 
 }

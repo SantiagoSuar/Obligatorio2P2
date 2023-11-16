@@ -45,6 +45,8 @@ public class ConsultaPuesto extends javax.swing.JDialog {
 
         jLabel2.setText("Nivel:");
 
+        SpnNivel.setModel(new javax.swing.SpinnerNumberModel(1, 1, 10, 1));
+
         jBtnAgregar.setText("Consultar");
         jBtnAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -64,6 +66,11 @@ public class ConsultaPuesto extends javax.swing.JDialog {
         });
 
         jButton2.setText("Cancelar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -130,7 +137,7 @@ public class ConsultaPuesto extends javax.swing.JDialog {
         Puesto pues = (Puesto) panexp1.getSelectedValue();
         int valorSeleccionado = (int) SpnNivel.getValue();
         postulanteNivel(pues, valorSeleccionado);
-        miS.ordenarPostulantes();
+        miS.ordenarPostulantes(0);
         panexp.setListData(miS.getCandidatos().toArray());
     }//GEN-LAST:event_jBtnAgregarActionPerformed
 
@@ -143,6 +150,10 @@ public class ConsultaPuesto extends javax.swing.JDialog {
         }
         ag.cerrar();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
     public void postulanteNivel(Puesto p, int valor) {
         for (Postulante pos : miS.getListaPostulantes()) {
             boolean nivelesSuficientes = true;
@@ -163,6 +174,8 @@ public class ConsultaPuesto extends javax.swing.JDialog {
                             miS.getCandidatos().add(pos);
                         }
                     }
+                }else{
+                miS.getCandidatos().remove(pos);
                 }
 
             } catch (java.lang.NullPointerException e) {

@@ -96,6 +96,7 @@ public class VentanaBajaPostulante extends javax.swing.JDialog {
            Postulante postu = (Postulante) jList1.getSelectedValue();
        if(postu!=null){
         miS.getListaPostulantes().remove(postu);
+        miS.getCandidatos().remove(postu);
         jList1.setListData(miS.getListaPostulantes().toArray());
        }
     }//GEN-LAST:event_jButton1ActionPerformed

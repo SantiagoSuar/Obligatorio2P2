@@ -1,5 +1,6 @@
 package Dominio;
 
+import Interfaz.Funcionalidades;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -113,10 +114,14 @@ public class Sistema implements Serializable {
         return candidatos;
     }
 
-    public void ordenarPostulantes() {
+    public void ordenarPostulantes(int n) {
+        if(n==1){
+        Collections.sort(getListaPostulantes(),new Funcionalidades());
+        }else{
         Collections.sort(getCandidatos());
+        }
     }
- 
+    
 
     public ArrayList<String> hashmapToArrylist(Postulante pos) {
         ArrayList<String> list = new ArrayList<String>();
