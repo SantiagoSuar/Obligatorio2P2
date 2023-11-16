@@ -1,17 +1,18 @@
-
 package Interfaz;
 
 import Dominio.*;
 import Grabacion.ArchivoGrabacion;
 
 public class ConsultaPuesto extends javax.swing.JDialog {
+
     private Sistema miS;
     private boolean nuevoSis;
-    public ConsultaPuesto(java.awt.Frame parent, boolean modal, Sistema miS,boolean nuevoSis) {
+
+    public ConsultaPuesto(java.awt.Frame parent, boolean modal, Sistema miS, boolean nuevoSis) {
         super(parent, modal);
         initComponents();
         this.miS = miS;
-        this.nuevoSis=nuevoSis;
+        this.nuevoSis = nuevoSis;
         panexp1.setListData(miS.getListaPuestos().toArray());
     }
 
@@ -123,8 +124,8 @@ public class ConsultaPuesto extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-   
-    
+
+
     private void jBtnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAgregarActionPerformed
         Puesto pues = (Puesto) panexp1.getSelectedValue();
         int valorSeleccionado = (int) SpnNivel.getValue();
@@ -135,10 +136,10 @@ public class ConsultaPuesto extends javax.swing.JDialog {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Puesto pues = (Puesto) panexp1.getSelectedValue();
-        ArchivoGrabacion ag = new ArchivoGrabacion("Consultas.txt",nuevoSis);
+        ArchivoGrabacion ag = new ArchivoGrabacion("Consultas.txt", nuevoSis);
         ag.grabarLinea(pues.getNombre());
-        for(Postulante pos : miS.getCandidatos()){
-        ag.grabarLinea(pos.getNombre()+ " "+ pos.getCedula()+ " "+ pos.getMail());
+        for (Postulante pos : miS.getCandidatos()) {
+            ag.grabarLinea(pos.getNombre() + " " + pos.getCedula() + " " + pos.getMail());
         }
         ag.cerrar();
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -147,7 +148,7 @@ public class ConsultaPuesto extends javax.swing.JDialog {
             boolean nivelesSuficientes = true;
 
             try {
-                if (pos.getTipoTrabajo() == p.getTipoPuesto() && pos.getListaEntrevistas().size()>= 1) {
+                if (pos.getTipoTrabajo() == p.getTipoPuesto() && pos.getListaEntrevistas().size() >= 1) {
 
                     for (Tematica tema : p.getTemasRequeridos()) {
                         if (pos.getNivelTemas().get(tema) < valor) {
@@ -158,15 +159,18 @@ public class ConsultaPuesto extends javax.swing.JDialog {
                     }
 
                     if (nivelesSuficientes) {
-                        miS.getCandidatos().add(pos);
+                        if (!miS.getCandidatos().contains(pos)) {
+                            miS.getCandidatos().add(pos);
+                        }
                     }
                 }
 
             } catch (java.lang.NullPointerException e) {
+                if (miS.getCandidatos().contains(pos)) {
+                    miS.getCandidatos().remove(pos);
+                }
             }
-            
-            
-            
+
         }
     }
 
