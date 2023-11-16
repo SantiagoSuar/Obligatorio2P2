@@ -77,13 +77,18 @@ public class ConsultaTematica extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void panexp1ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_panexp1ValueChanged
+       
         Tematica t=(Tematica)panexp1.getSelectedValue();
         int cant=0;
         int cantPuestos=0;
          for (Postulante pos : miS.getListaPostulantes()) {
+              try{
              if(pos.getNivelTemas().get(t)>5){
                  cant++;
              }
+             }catch(NullPointerException e){
+        
+        }
         }
          jTextField1.setText(cant+"");
          
@@ -93,6 +98,7 @@ public class ConsultaTematica extends javax.swing.JDialog {
              }
         }
           jTextField2.setText(cantPuestos+"");
+        
     }//GEN-LAST:event_panexp1ValueChanged
 
 

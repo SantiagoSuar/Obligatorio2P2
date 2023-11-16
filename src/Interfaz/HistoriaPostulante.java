@@ -4,6 +4,7 @@
  */
 package Interfaz;
 
+import Funcionalidades.Funcionalidades;
 import Dominio.*;
 import java.awt.*;
 import java.io.IOException;

@@ -4,8 +4,9 @@
  */
 package Interfaz;
 
+import Funcionalidades.Funcionalidades;
 import Dominio.*;
-import static Interfaz.Funcionalidades.verificarForm;
+import static Funcionalidades.Funcionalidades.verificarForm;
 import javax.swing.JOptionPane;
 
 /**

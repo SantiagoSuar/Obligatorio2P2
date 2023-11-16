@@ -4,6 +4,7 @@
  */
 package Interfaz;
 
+import Funcionalidades.Funcionalidades;
 import Dominio.*;
 import javax.swing.JOptionPane;
 
@@ -125,7 +126,6 @@ public class IngresoEntrevista extends javax.swing.JDialog {
         int tot= postulante.getListaEntrevistas().size()+1;
         Entrevista entrevista = new Entrevista(postulante, evaluador, puntaje, comentarios,tot);
         postulante.agregarEntrevista(entrevista);
-            System.out.println("asds");
         }
       
     }//GEN-LAST:event_jButton1ActionPerformed

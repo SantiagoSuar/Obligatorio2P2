@@ -1,8 +1,9 @@
 package Interfaz;
 
+import Funcionalidades.Funcionalidades;
 import Dominio.Sistema;
 import Dominio.Tematica;
-import static Interfaz.Funcionalidades.verificarForm;
+import static Funcionalidades.Funcionalidades.verificarForm;
 import javax.swing.JOptionPane;
 
 

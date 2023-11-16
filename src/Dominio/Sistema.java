@@ -1,6 +1,6 @@
 package Dominio;
 
-import Interfaz.Funcionalidades;
+import Funcionalidades.Funcionalidades;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
