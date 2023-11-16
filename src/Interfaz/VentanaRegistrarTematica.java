@@ -6,11 +6,11 @@ import Dominio.Tematica;
 import static Funcionalidades.Funcionalidades.verificarForm;
 import javax.swing.JOptionPane;
 
-
 public class VentanaRegistrarTematica extends javax.swing.JDialog {
+
     private Sistema miS;
 
-    public VentanaRegistrarTematica(java.awt.Frame parent, boolean modal,Sistema miS) {
+    public VentanaRegistrarTematica(java.awt.Frame parent, boolean modal, Sistema miS) {
         super(parent, modal);
         this.miS = miS;
         initComponents();
@@ -36,6 +36,7 @@ public class VentanaRegistrarTematica extends javax.swing.JDialog {
 
         jLabel2.setText("Descripcion:");
 
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel3.setText("Registro de temática");
 
         jTxtDescripcion.setColumns(20);
@@ -53,7 +54,7 @@ public class VentanaRegistrarTematica extends javax.swing.JDialog {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(9, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 325, Short.MAX_VALUE)
                     .addComponent(jTxtNombre))
@@ -64,7 +65,7 @@ public class VentanaRegistrarTematica extends javax.swing.JDialog {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(jTxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -88,43 +89,43 @@ public class VentanaRegistrarTematica extends javax.swing.JDialog {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(52, 52, 52)
+                .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel2)
                             .addComponent(jLabel1))
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jBtnCancelar)
+                        .addComponent(jBtnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(JBtnRegistrar)))
-                .addGap(55, 55, 55))
+                        .addComponent(JBtnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(24, 24, 24))
             .addGroup(layout.createSequentialGroup()
-                .addGap(165, 165, 165)
+                .addGap(141, 141, 141)
                 .addComponent(jLabel3)
-                .addGap(0, 254, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(70, 70, 70)
+                        .addGap(55, 55, 55)
                         .addComponent(jLabel1)
-                        .addGap(44, 44, 44)
-                        .addComponent(jLabel2))
+                        .addGap(26, 26, 26)
+                        .addComponent(jLabel2)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
                         .addComponent(jLabel3)
-                        .addGap(18, 18, 18)
+                        .addGap(12, 12, 12)
                         .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBtnCancelar)
                     .addComponent(JBtnRegistrar))
-                .addGap(29, 29, 29))
+                .addGap(15, 15, 15))
         );
 
         pack();
@@ -135,22 +136,22 @@ public class VentanaRegistrarTematica extends javax.swing.JDialog {
     }//GEN-LAST:event_jTxtNombreActionPerformed
 
     private void JBtnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtnRegistrarActionPerformed
-        String nombre=jTxtNombre.getText();        
-        String descripcion=jTxtDescripcion.getText();
-        
-        if(!verificarForm(jPanel2)){
-            Tematica nuevaTematica= new Tematica(nombre, descripcion);
-        if(!miS.seRepiteTematica(nuevaTematica)){
-            String mensaje= "La tematica ha sido agregada";
-            JOptionPane.showMessageDialog(null, mensaje, "Confirmado", JOptionPane.INFORMATION_MESSAGE);
-            miS.agregarTematica(nuevaTematica);
-            
+        String nombre = jTxtNombre.getText();
+        String descripcion = jTxtDescripcion.getText();
+
+        if (!verificarForm(jPanel2)) {
+            Tematica nuevaTematica = new Tematica(nombre, descripcion);
+            if (!miS.seRepiteTematica(nuevaTematica)) {
+                String mensaje = "La tematica ha sido agregada";
+                JOptionPane.showMessageDialog(null, mensaje, "Confirmado", JOptionPane.INFORMATION_MESSAGE);
+                miS.agregarTematica(nuevaTematica);
+
+                Funcionalidades.limpiarTxt(jPanel2);
+            } else {
+                String mensaje = "Error: La tematica ha sido agregada anteriormente.";
+                JOptionPane.showMessageDialog(null, mensaje, "Error", JOptionPane.ERROR_MESSAGE);
+            }
             Funcionalidades.limpiarTxt(jPanel2);
-        }else{
-            String mensaje="Error: La tematica ha sido agregada anteriormente.";
-            JOptionPane.showMessageDialog(null, mensaje, "Error", JOptionPane.ERROR_MESSAGE);
-        }
-          Funcionalidades.limpiarTxt(jPanel2);
         }
     }//GEN-LAST:event_JBtnRegistrarActionPerformed
 

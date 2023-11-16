@@ -3,7 +3,6 @@ package Interfaz;
 import Funcionalidades.Funcionalidades;
 import Dominio.*;
 import static Funcionalidades.Funcionalidades.verificarForm;
-import java.awt.Container;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -12,10 +11,10 @@ public class VentanaAltaPostulante extends javax.swing.JDialog {
     private Sistema miS;
     private Funcionalidades func;
 
-    public VentanaAltaPostulante(java.awt.Frame parent, boolean modal, Sistema miS,Funcionalidades func) {
+    public VentanaAltaPostulante(java.awt.Frame parent, boolean modal, Sistema miS, Funcionalidades func) {
         super(parent, modal);
         this.miS = miS;
-          this.func= func;
+        this.func = func;
         initComponents();
     }
 
@@ -31,17 +30,17 @@ public class VentanaAltaPostulante extends javax.swing.JDialog {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        TxtNombre = new javax.swing.JTextField();
-        TxtCedula = new javax.swing.JTextField();
-        TxtDire = new javax.swing.JTextField();
-        TxtTelefono = new javax.swing.JTextField();
-        TxtMail = new javax.swing.JTextField();
-        TxtLinkedin = new javax.swing.JTextField();
+        jTxtNombre = new javax.swing.JTextField();
+        jTxtCedula = new javax.swing.JTextField();
+        jTxtDireccion = new javax.swing.JTextField();
+        jTxtTelefono = new javax.swing.JTextField();
+        jTxtMail = new javax.swing.JTextField();
+        jTxtLinkedin = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        btnRemoto = new javax.swing.JRadioButton();
-        btnPresencial = new javax.swing.JRadioButton();
-        btnMixto = new javax.swing.JRadioButton();
+        jbtnRemoto = new javax.swing.JRadioButton();
+        jbtnPresencial = new javax.swing.JRadioButton();
+        jbtnMixto = new javax.swing.JRadioButton();
         jBtnCancelar = new javax.swing.JButton();
         jBtnSiguiente = new javax.swing.JButton();
 
@@ -58,12 +57,6 @@ public class VentanaAltaPostulante extends javax.swing.JDialog {
         jLabel6.setText("Mail:");
 
         jLabel7.setText("Linkedin:");
-
-        TxtCedula.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TxtCedulaActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout PnlPosLayout = new javax.swing.GroupLayout(PnlPos);
         PnlPos.setLayout(PnlPosLayout);
@@ -85,12 +78,12 @@ public class VentanaAltaPostulante extends javax.swing.JDialog {
                             .addComponent(jLabel7))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(PnlPosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(TxtNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 321, Short.MAX_VALUE)
-                    .addComponent(TxtCedula)
-                    .addComponent(TxtDire)
-                    .addComponent(TxtTelefono)
-                    .addComponent(TxtMail)
-                    .addComponent(TxtLinkedin))
+                    .addComponent(jTxtNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 321, Short.MAX_VALUE)
+                    .addComponent(jTxtCedula)
+                    .addComponent(jTxtDireccion)
+                    .addComponent(jTxtTelefono)
+                    .addComponent(jTxtMail)
+                    .addComponent(jTxtLinkedin))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
         PnlPosLayout.setVerticalGroup(
@@ -99,43 +92,44 @@ public class VentanaAltaPostulante extends javax.swing.JDialog {
                 .addGap(17, 17, 17)
                 .addGroup(PnlPosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(TxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(PnlPosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(TxtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTxtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(PnlPosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(TxtDire, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTxtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(PnlPosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(TxtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTxtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(PnlPosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(TxtMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTxtMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(PnlPosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(TxtLinkedin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTxtLinkedin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(9, Short.MAX_VALUE))
         );
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setText("Alta Postulante");
 
         jLabel8.setText("Formato:");
 
-        buttonGroup1.add(btnRemoto);
-        btnRemoto.setSelected(true);
-        btnRemoto.setText("Remoto");
+        buttonGroup1.add(jbtnRemoto);
+        jbtnRemoto.setSelected(true);
+        jbtnRemoto.setText("Remoto");
 
-        buttonGroup1.add(btnPresencial);
-        btnPresencial.setText("Prescencial");
+        buttonGroup1.add(jbtnPresencial);
+        jbtnPresencial.setText("Prescencial");
 
-        buttonGroup1.add(btnMixto);
-        btnMixto.setText("Mixto");
+        buttonGroup1.add(jbtnMixto);
+        jbtnMixto.setText("Mixto");
 
         jBtnCancelar.setText("Cancelar");
         jBtnCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -165,11 +159,11 @@ public class VentanaAltaPostulante extends javax.swing.JDialog {
                         .addGap(6, 6, 6)
                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(80, 80, 80)
-                        .addComponent(btnRemoto)
+                        .addComponent(jbtnRemoto)
                         .addGap(64, 64, 64)
-                        .addComponent(btnPresencial)
+                        .addComponent(jbtnPresencial)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnMixto)
+                        .addComponent(jbtnMixto)
                         .addGap(34, 34, 34))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(116, 116, 116)
@@ -180,93 +174,74 @@ public class VentanaAltaPostulante extends javax.swing.JDialog {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(210, 210, 210))
+                .addGap(184, 184, 184))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
+                .addContainerGap(12, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PnlPos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(btnRemoto)
-                    .addComponent(btnPresencial)
-                    .addComponent(btnMixto))
-                .addContainerGap(75, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBtnSiguiente)
-                    .addComponent(jBtnCancelar))
-                .addGap(26, 26, 26))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(PnlPos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel8)
+                            .addComponent(jbtnRemoto)
+                            .addComponent(jbtnPresencial)
+                            .addComponent(jbtnMixto))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(298, 298, 298)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jBtnSiguiente)
+                            .addComponent(jBtnCancelar))
+                        .addGap(26, 26, 26))))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void TxtCedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtCedulaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TxtCedulaActionPerformed
-   
     private void jBtnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSiguienteActionPerformed
-        String nombre = TxtNombre.getText();
-        String cedula = TxtCedula.getText();
-        String dire = TxtDire.getText();
-        String telefono = TxtTelefono.getText();
-        String mail = TxtMail.getText();
-        String linkedin = TxtLinkedin.getText();
+        String nombre = jTxtNombre.getText();
+        String cedula = jTxtCedula.getText();
+        String dire = jTxtDireccion.getText();
+        String telefono = jTxtTelefono.getText();
+        String mail = jTxtMail.getText();
+        String linkedin = jTxtLinkedin.getText();
         int tipoTrabajo;
-        if (btnRemoto.isSelected()) {
+        if (jbtnRemoto.isSelected()) {
             tipoTrabajo = 0;
-        } else if (btnPresencial.isSelected()) {
+        } else if (jbtnPresencial.isSelected()) {
             tipoTrabajo = 1;
         } else {
             tipoTrabajo = 2;
         }
-
-        if (!verificarForm(PnlPos) && func.verificar( cedula, telefono, "@", "https://www.linkedin.com")) {
-           int cedula2 = Integer.parseInt(cedula);
+        if (!verificarForm(PnlPos) && func.verificar(cedula, telefono, "@", "https://www.linkedin.com")) {
+            int cedula2 = Integer.parseInt(cedula);
             Postulante pos = new Postulante(nombre, dire, cedula2, telefono, mail, linkedin, tipoTrabajo);
-            
             if (miS.seRepiteCedula(pos)) {
                 String mensaje = "Error: El postulante ya ha sido agregado anteriormente.";
                 JOptionPane.showMessageDialog(null, mensaje, "Error", JOptionPane.ERROR_MESSAGE);
-            }else{
-            JFrame frame= new JFrame("NIVELES / TEMAS");
-            VentanaNivelesTemas v = new VentanaNivelesTemas(frame, true, pos, miS);
-            v.setVisible(true);
-            Funcionalidades.limpiarTxt(PnlPos);
-            
-            
+            } else {
+                JFrame frame = new JFrame("NIVELES / TEMAS");
+                VentanaNivelesTemas v = new VentanaNivelesTemas(frame, true, pos, miS);
+                v.setVisible(true);
+                Funcionalidades.limpiarTxt(PnlPos);
             }
-        }else{
-               String mensaje = "Error: Ingrese datos validos.";
+        } else {
+            String mensaje = "Error: Ingrese datos validos.";
             JOptionPane.showMessageDialog(null, mensaje, "Error", JOptionPane.ERROR_MESSAGE);
         }
-            
-            
-        
     }//GEN-LAST:event_jBtnSiguienteActionPerformed
 
     private void jBtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelarActionPerformed
         dispose();
     }//GEN-LAST:event_jBtnCancelarActionPerformed
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PnlPos;
-    private javax.swing.JTextField TxtCedula;
-    private javax.swing.JTextField TxtDire;
-    private javax.swing.JTextField TxtLinkedin;
-    private javax.swing.JTextField TxtMail;
-    private javax.swing.JTextField TxtNombre;
-    private javax.swing.JTextField TxtTelefono;
-    private javax.swing.JRadioButton btnMixto;
-    private javax.swing.JRadioButton btnPresencial;
-    private javax.swing.JRadioButton btnRemoto;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jBtnCancelar;
     private javax.swing.JButton jBtnSiguiente;
@@ -278,5 +253,14 @@ public class VentanaAltaPostulante extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JTextField jTxtCedula;
+    private javax.swing.JTextField jTxtDireccion;
+    private javax.swing.JTextField jTxtLinkedin;
+    private javax.swing.JTextField jTxtMail;
+    private javax.swing.JTextField jTxtNombre;
+    private javax.swing.JTextField jTxtTelefono;
+    private javax.swing.JRadioButton jbtnMixto;
+    private javax.swing.JRadioButton jbtnPresencial;
+    private javax.swing.JRadioButton jbtnRemoto;
     // End of variables declaration//GEN-END:variables
 }

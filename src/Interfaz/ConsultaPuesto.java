@@ -13,7 +13,7 @@ public class ConsultaPuesto extends javax.swing.JDialog {
         initComponents();
         this.miS = miS;
         this.nuevoSis = nuevoSis;
-        panexp1.setListData(miS.getListaPuestos().toArray());
+        jLstPuestos.setListData(miS.getListaPuestos().toArray());
     }
 
     @SuppressWarnings("unchecked")
@@ -23,15 +23,18 @@ public class ConsultaPuesto extends javax.swing.JDialog {
         jToggleButton1 = new javax.swing.JToggleButton();
         button1 = new java.awt.Button();
         jScrollPane2 = new javax.swing.JScrollPane();
-        panexp = new javax.swing.JList();
+        jLstPostulantes = new javax.swing.JList();
         jLabel2 = new javax.swing.JLabel();
-        SpnNivel = new javax.swing.JSpinner();
-        jBtnAgregar = new javax.swing.JButton();
+        jSpnNivel = new javax.swing.JSpinner();
+        jBtnConsultar = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jScrollPane3 = new javax.swing.JScrollPane();
-        panexp1 = new javax.swing.JList();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jLstPuestos = new javax.swing.JList();
+        jBtnExportar = new javax.swing.JButton();
+        jBtnCancelar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         jToggleButton1.setText("jToggleButton1");
 
@@ -39,49 +42,50 @@ public class ConsultaPuesto extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        panexp.setDragEnabled(true);
-        panexp.setInheritsPopupMenu(true);
-        jScrollPane2.setViewportView(panexp);
+        jLstPostulantes.setDragEnabled(true);
+        jLstPostulantes.setInheritsPopupMenu(true);
+        jScrollPane2.setViewportView(jLstPostulantes);
 
         jLabel2.setText("Nivel:");
 
-        SpnNivel.setModel(new javax.swing.SpinnerNumberModel(1, 1, 10, 1));
+        jSpnNivel.setModel(new javax.swing.SpinnerNumberModel(1, 1, 10, 1));
 
-        jBtnAgregar.setText("Consultar");
-        jBtnAgregar.addActionListener(new java.awt.event.ActionListener() {
+        jBtnConsultar.setText("Consultar");
+        jBtnConsultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnAgregarActionPerformed(evt);
+                jBtnConsultarActionPerformed(evt);
             }
         });
 
-        panexp1.setDragEnabled(true);
-        panexp1.setInheritsPopupMenu(true);
-        jScrollPane3.setViewportView(panexp1);
+        jLstPuestos.setDragEnabled(true);
+        jLstPuestos.setInheritsPopupMenu(true);
+        jScrollPane3.setViewportView(jLstPuestos);
 
-        jButton1.setText("Exportar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jBtnExportar.setText("Exportar");
+        jBtnExportar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jBtnExportarActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Cancelar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jBtnCancelar.setText("Cancelar");
+        jBtnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jBtnCancelarActionPerformed(evt);
             }
         });
+
+        jLabel1.setText("Postulantes:");
+
+        jLabel3.setText("Puestos:");
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel4.setText("Consulta para Puesto");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(jButton2)
-                .addGap(188, 188, 188)
-                .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -89,116 +93,130 @@ public class ConsultaPuesto extends javax.swing.JDialog {
                         .addComponent(jSeparator1)
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(48, 48, 48)
-                        .addComponent(SpnNivel, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jBtnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28))
+                        .addGap(10, 10, 10)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 394, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(18, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(18, 18, 18)
+                                .addComponent(jSpnNivel, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jBtnConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(20, 20, 20))))))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(20, Short.MAX_VALUE))))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(16, 16, 16)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 394, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(18, Short.MAX_VALUE)))
+                        .addGap(14, 14, 14)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jBtnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(147, 147, 147)
+                                    .addComponent(jBtnExportar, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(118, 118, 118)
+                        .addComponent(jLabel4)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(231, 231, 231)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SpnNivel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSpnNivel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
-                    .addComponent(jBtnAgregar))
+                    .addComponent(jBtnConsultar))
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addGap(27, 27, 27))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(44, 44, 44)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(343, Short.MAX_VALUE)))
+                    .addComponent(jBtnCancelar)
+                    .addComponent(jBtnExportar))
+                .addGap(14, 14, 14))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-
-    private void jBtnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAgregarActionPerformed
-        Puesto pues = (Puesto) panexp1.getSelectedValue();
-        int valorSeleccionado = (int) SpnNivel.getValue();
+    private void jBtnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConsultarActionPerformed
+        Puesto pues = (Puesto) jLstPuestos.getSelectedValue();
+        int valorSeleccionado = (int) jSpnNivel.getValue();
         postulanteNivel(pues, valorSeleccionado);
         miS.ordenarPostulantes(0);
-        panexp.setListData(miS.getCandidatos().toArray());
-    }//GEN-LAST:event_jBtnAgregarActionPerformed
+        jLstPostulantes.setListData(miS.getCandidatos().toArray());
+    }//GEN-LAST:event_jBtnConsultarActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Puesto pues = (Puesto) panexp1.getSelectedValue();
+    private void jBtnExportarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnExportarActionPerformed
+        Puesto pues = (Puesto) jLstPuestos.getSelectedValue();
         ArchivoGrabacion ag = new ArchivoGrabacion("Consultas.txt", nuevoSis);
         ag.grabarLinea(pues.getNombre());
         for (Postulante pos : miS.getCandidatos()) {
             ag.grabarLinea(pos.getNombre() + " " + pos.getCedula() + " " + pos.getMail());
         }
         ag.cerrar();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jBtnExportarActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jBtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelarActionPerformed
         dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jBtnCancelarActionPerformed
     public void postulanteNivel(Puesto p, int valor) {
         for (Postulante pos : miS.getListaPostulantes()) {
             boolean nivelesSuficientes = true;
-
             try {
                 if (pos.getTipoTrabajo() == p.getTipoPuesto() && pos.getListaEntrevistas().size() >= 1) {
-
                     for (Tematica tema : p.getTemasRequeridos()) {
                         if (pos.getNivelTemas().get(tema) < valor) {
                             nivelesSuficientes = false;
-
                         }
-
                     }
-
                     if (nivelesSuficientes) {
                         if (!miS.getCandidatos().contains(pos)) {
                             miS.getCandidatos().add(pos);
                         }
                     }
-                }else{
-                miS.getCandidatos().remove(pos);
+                } else {
+                    miS.getCandidatos().remove(pos);
                 }
-
             } catch (java.lang.NullPointerException e) {
                 if (miS.getCandidatos().contains(pos)) {
                     miS.getCandidatos().remove(pos);
                 }
             }
-
         }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JSpinner SpnNivel;
     private java.awt.Button button1;
-    private javax.swing.JButton jBtnAgregar;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jBtnCancelar;
+    private javax.swing.JButton jBtnConsultar;
+    private javax.swing.JButton jBtnExportar;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JList jLstPostulantes;
+    private javax.swing.JList jLstPuestos;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSpinner jSpnNivel;
     private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JList panexp;
-    private javax.swing.JList panexp1;
     // End of variables declaration//GEN-END:variables
 }

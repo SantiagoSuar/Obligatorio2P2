@@ -19,7 +19,6 @@ public class Menu extends javax.swing.JFrame {
         this.func = func;
         this.nuevoSis = nuevoSis;
         initComponents();
-
     }
 
     @SuppressWarnings("unchecked")
@@ -42,7 +41,7 @@ public class Menu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jBtnRegistroPostulante.setText("Registrar Postulante");
+        jBtnRegistroPostulante.setText("Alta de Postulante");
         jBtnRegistroPostulante.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBtnRegistroPostulanteActionPerformed(evt);
@@ -56,14 +55,14 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jBtnEliminoPostulante.setText("Eliminar Postulante");
+        jBtnEliminoPostulante.setText("Baja de Postulante");
         jBtnEliminoPostulante.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBtnEliminoPostulanteActionPerformed(evt);
             }
         });
 
-        jBtnRegistroEntrevista.setText("Registrar Entrevista");
+        jBtnRegistroEntrevista.setText("Ingresar Entrevista");
         jBtnRegistroEntrevista.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBtnRegistroEntrevistaActionPerformed(evt);
@@ -136,9 +135,6 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(212, 212, 212)
-                        .addComponent(jLblTitulo))
-                    .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jBtnRegistroTematica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -154,25 +150,29 @@ public class Menu extends javax.swing.JFrame {
                                     .addComponent(jBtnHistoriaPostulante, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
                                     .addComponent(jBtnConsultaPuesto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addComponent(jBtnRegistroPuesto, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jBtnRegistroEntrevista, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jBtnRegistroEntrevista, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(83, 83, 83)
+                                .addComponent(jLblPregunta))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(127, 127, 127)
+                                .addComponent(jLblTitulo))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(257, 257, 257)
+                        .addComponent(jBtnFin)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(252, 252, 252)
-                    .addComponent(jBtnFin))
-                .addGroup(layout.createSequentialGroup()
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(77, 77, 77)
-                    .addComponent(jLblPregunta)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addGap(12, 12, 12)
                         .addComponent(jLblTitulo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLblPregunta))
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -223,8 +223,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jBtnConsultaPuestoActionPerformed
 
     private void jBtnFinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnFinActionPerformed
-
-        int opcion = JOptionPane.showConfirmDialog(null, "Desea Salir?", "Confirmacion", JOptionPane.YES_NO_OPTION);
+        int opcion = JOptionPane.showConfirmDialog(null, "¿Desea salir?", "Confirmacion", JOptionPane.YES_NO_OPTION);
         if (opcion == JOptionPane.YES_OPTION) {
             try {
                 Funcionalidades.crearSistema(miS);
@@ -255,7 +254,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void jBtnRegistroPuestoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnRegistroPuestoActionPerformed
         JFrame frame = new JFrame("Ingreso Puesto");
-        IngreesoPuesto v = new IngreesoPuesto(frame, true, miS);
+        IngresoPuesto v = new IngresoPuesto(frame, true, miS);
         v.setVisible(true);
     }//GEN-LAST:event_jBtnRegistroPuestoActionPerformed
 
@@ -264,7 +263,6 @@ public class Menu extends javax.swing.JFrame {
         ConsultaTematica v = new ConsultaTematica(frame, true, miS);
         v.setVisible(true);
     }//GEN-LAST:event_jBtnConsultaTematicaActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBtnConsultaPuesto;

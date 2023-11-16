@@ -38,11 +38,11 @@
                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                       <Component id="jLabel8" min="-2" pref="48" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
-                      <Component id="btnRemoto" min="-2" max="-2" attributes="0"/>
+                      <Component id="jbtnRemoto" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
-                      <Component id="btnPresencial" min="-2" max="-2" attributes="0"/>
+                      <Component id="jbtnPresencial" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="btnMixto" min="-2" max="-2" attributes="0"/>
+                      <Component id="jbtnMixto" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -57,33 +57,37 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="210" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="184" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+              <EmptySpace pref="12" max="32767" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="PnlPos" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnRemoto" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnPresencial" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnMixto" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="PnlPos" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jbtnRemoto" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jbtnPresencial" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jbtnMixto" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="-2" pref="298" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jBtnSiguiente" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jBtnCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace pref="75" max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jBtnSiguiente" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jBtnCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -114,12 +118,12 @@
                       </Group>
                   </Group>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="TxtNombre" pref="321" max="32767" attributes="0"/>
-                      <Component id="TxtCedula" max="32767" attributes="0"/>
-                      <Component id="TxtDire" max="32767" attributes="0"/>
-                      <Component id="TxtTelefono" max="32767" attributes="0"/>
-                      <Component id="TxtMail" max="32767" attributes="0"/>
-                      <Component id="TxtLinkedin" max="32767" attributes="0"/>
+                      <Component id="jTxtNombre" pref="321" max="32767" attributes="0"/>
+                      <Component id="jTxtCedula" max="32767" attributes="0"/>
+                      <Component id="jTxtDireccion" max="32767" attributes="0"/>
+                      <Component id="jTxtTelefono" max="32767" attributes="0"/>
+                      <Component id="jTxtMail" max="32767" attributes="0"/>
+                      <Component id="jTxtLinkedin" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace pref="22" max="32767" attributes="0"/>
               </Group>
@@ -131,32 +135,32 @@
                   <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="TxtNombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTxtNombre" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="TxtCedula" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTxtCedula" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="TxtDire" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTxtDireccion" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="TxtTelefono" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTxtTelefono" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="TxtMail" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTxtMail" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="TxtLinkedin" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTxtLinkedin" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="9" max="32767" attributes="0"/>
               </Group>
@@ -194,25 +198,25 @@
             <Property name="text" type="java.lang.String" value="Linkedin:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="TxtNombre">
+        <Component class="javax.swing.JTextField" name="jTxtNombre">
         </Component>
-        <Component class="javax.swing.JTextField" name="TxtCedula">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TxtCedulaActionPerformed"/>
-          </Events>
+        <Component class="javax.swing.JTextField" name="jTxtCedula">
         </Component>
-        <Component class="javax.swing.JTextField" name="TxtDire">
+        <Component class="javax.swing.JTextField" name="jTxtDireccion">
         </Component>
-        <Component class="javax.swing.JTextField" name="TxtTelefono">
+        <Component class="javax.swing.JTextField" name="jTxtTelefono">
         </Component>
-        <Component class="javax.swing.JTextField" name="TxtMail">
+        <Component class="javax.swing.JTextField" name="jTxtMail">
         </Component>
-        <Component class="javax.swing.JTextField" name="TxtLinkedin">
+        <Component class="javax.swing.JTextField" name="jTxtLinkedin">
         </Component>
       </SubComponents>
     </Container>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="18" style="1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Alta Postulante"/>
       </Properties>
     </Component>
@@ -221,7 +225,7 @@
         <Property name="text" type="java.lang.String" value="Formato:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="btnRemoto">
+    <Component class="javax.swing.JRadioButton" name="jbtnRemoto">
       <Properties>
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
           <ComponentRef name="buttonGroup1"/>
@@ -230,7 +234,7 @@
         <Property name="text" type="java.lang.String" value="Remoto"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="btnPresencial">
+    <Component class="javax.swing.JRadioButton" name="jbtnPresencial">
       <Properties>
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
           <ComponentRef name="buttonGroup1"/>
@@ -238,7 +242,7 @@
         <Property name="text" type="java.lang.String" value="Prescencial"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="btnMixto">
+    <Component class="javax.swing.JRadioButton" name="jbtnMixto">
       <Properties>
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
           <ComponentRef name="buttonGroup1"/>

@@ -23,25 +23,29 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="493" max="32767" attributes="0"/>
-          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="pnlEva" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="149" max="-2" attributes="0"/>
+                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="pnlEva" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="311" max="32767" attributes="0"/>
-          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                  <Component id="pnlEva" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
-              </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="pnlEva" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="14" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -55,9 +59,10 @@
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Group type="102" attributes="0">
-                          <Component id="jBtnCancelar" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="304" max="32767" attributes="0"/>
-                          <Component id="jBtnSiguiente" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jBtnCancelar" min="-2" pref="124" max="-2" attributes="0"/>
+                          <EmptySpace pref="199" max="32767" attributes="0"/>
+                          <Component id="jBtnSiguiente" min="-2" pref="130" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -79,45 +84,45 @@
                               </Group>
                           </Group>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="TxtNombre" alignment="0" pref="321" max="32767" attributes="0"/>
-                              <Component id="TxtCedula" alignment="0" max="32767" attributes="0"/>
-                              <Component id="TxtDire" alignment="0" max="32767" attributes="0"/>
-                              <Component id="TxtAño" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jTxtNombre" alignment="0" pref="321" max="32767" attributes="0"/>
+                              <Component id="jTxtCedula" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jTxtDireccion" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jTxtAño" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="22" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="TxtNombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTxtNombre" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="TxtCedula" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTxtCedula" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="TxtDire" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTxtDireccion" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="TxtAño" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTxtAño" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="36" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jBtnSiguiente" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jBtnCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -152,19 +157,13 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel7">
         </Component>
-        <Component class="javax.swing.JTextField" name="TxtNombre">
+        <Component class="javax.swing.JTextField" name="jTxtNombre">
         </Component>
-        <Component class="javax.swing.JTextField" name="TxtCedula">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TxtCedulaActionPerformed"/>
-          </Events>
+        <Component class="javax.swing.JTextField" name="jTxtCedula">
         </Component>
-        <Component class="javax.swing.JTextField" name="TxtDire">
+        <Component class="javax.swing.JTextField" name="jTxtDireccion">
         </Component>
-        <Component class="javax.swing.JTextField" name="TxtA&#xf1;o">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TxtA&#xf1;oActionPerformed"/>
-          </Events>
+        <Component class="javax.swing.JTextField" name="jTxtA&#xf1;o">
         </Component>
         <Component class="javax.swing.JButton" name="jBtnCancelar">
           <Properties>
@@ -184,5 +183,13 @@
         </Component>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="18" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Registro de Evaluador"/>
+      </Properties>
+    </Component>
   </SubComponents>
 </Form>
