@@ -1,9 +1,10 @@
 package Dominio;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Postulante extends Persona implements Comparable<Postulante>  {
+public class Postulante extends Persona implements Comparable<Postulante>, Serializable {
 
     private String mail;
     private String telefono;

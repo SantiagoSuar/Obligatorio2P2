@@ -5,6 +5,9 @@
 package Interfaz;
 
 import Dominio.*;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -13,7 +16,7 @@ import Dominio.*;
 public class Inicio extends javax.swing.JFrame {
 
 private boolean nuevo;
-    public Inicio() {
+    public Inicio(){
         initComponents();
     }
     @SuppressWarnings("unchecked")
@@ -65,18 +68,26 @@ private boolean nuevo;
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        nuevo=false;
-         Sistema miS = new Sistema(nuevoSis());
+         Sistema miS = new Sistema();
         Funcionalidades func = new Funcionalidades();
         Menu miM= new Menu(miS,func,nuevo);
         dispose();
         miM.setVisible(true);
+   
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         nuevo=true;
-          Sistema miS = new Sistema(nuevoSis());
         Funcionalidades func = new Funcionalidades();
-        Menu miM= new Menu(miS,func,nuevo);
+        
+        Menu miM = null;
+    try {
+        miM = new Menu(Funcionalidades.recuperarSistema(),func,nuevo);
+    } catch (IOException ex) {
+        Logger.getLogger(Inicio.class.getName()).log(Level.SEVERE, null, ex);
+    } catch (ClassNotFoundException ex) {
+        Logger.getLogger(Inicio.class.getName()).log(Level.SEVERE, null, ex);
+    }
         dispose();
         miM.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -87,10 +98,9 @@ private boolean nuevo;
     private javax.swing.JButton jButton2;
     // End of variables declaration//GEN-END:variables
 
-    /**
-     * @return the nuevo
-     */
+   
     public boolean nuevoSis() {
         return nuevo;
     }
+   
 }

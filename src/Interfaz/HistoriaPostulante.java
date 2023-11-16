@@ -327,16 +327,16 @@ public class HistoriaPostulante extends javax.swing.JDialog {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-      Postulante pos = (Postulante) panexp1.getSelectedValue();
-    String palabra = jTextField1.getText();
+        Postulante pos = (Postulante) panexp1.getSelectedValue();
+        String palabra = jTextField1.getText();
 
-    for (int i = 0; i < modelo.getRowCount(); i++) {
-        String comentarios = (String) modelo.getValueAt(i, 3);
-
-        if (comentarios.contains(palabra)) {
-           
+        for (int i = 0; i < modelo.getRowCount(); i++) {
+            String comentarios = (String) pos.getListaEntrevistas().get(i).getComentarios();
+            if (comentarios.contains(palabra)) {
+                comentarios = "<html>" + comentarios.replaceAll(palabra, "<font color='red'>" + palabra + "</font>") + "</html>";
+                modelo.setValueAt(comentarios, i, 3);
+            }
         }
-    }
 
     }//GEN-LAST:event_jButton1ActionPerformed
 

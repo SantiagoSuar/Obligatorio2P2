@@ -4,7 +4,13 @@
  */
 package Interfaz;
 
+import Dominio.Sistema;
 import java.awt.*;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import javax.swing.*;
 import javax.swing.table.*;
 
@@ -78,5 +84,26 @@ public class Funcionalidades {
         }
         return valido;
     }
+    
+     public static void crearSistema(Sistema miS) throws IOException {
+        
+       
+
+        FileOutputStream archivo = new FileOutputStream("Datos");
+        ObjectOutputStream datos = new ObjectOutputStream(archivo);
+        datos.writeObject(miS);
+        datos.close();
+    }
+
+    public static Sistema recuperarSistema() throws IOException, ClassNotFoundException {
+
+        FileInputStream archivo = new FileInputStream("Datos");
+        
+        ObjectInputStream datos = new ObjectInputStream(archivo);
+        
+        Sistema miS = (Sistema)datos.readObject();
+        return miS;
+    }
+        
 
 }

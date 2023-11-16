@@ -1,25 +1,24 @@
 package Dominio;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 
 
-public class Sistema {
+public class Sistema implements Serializable {
 
     private ArrayList<Postulante> listaPostulantes;
     private ArrayList<Tematica> listaTematicas;
     private ArrayList<Puesto> listaPuestos;
     private ArrayList<Evaluador> listaEvaluadores;
     private ArrayList<Postulante> candidatos;
-    private boolean newSist;
 
-    public Sistema(boolean a) {
+    public Sistema() {
         this.listaPostulantes = new ArrayList();
         this.listaTematicas = new ArrayList();
         this.listaPuestos = new ArrayList();
         this.listaEvaluadores = new ArrayList();
         this.candidatos = new ArrayList();
-        newSist=true;
 
     }
 

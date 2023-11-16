@@ -1,6 +1,8 @@
 package Dominio;
 
-public class Evaluador extends Persona {
+import java.io.Serializable;
+
+public class Evaluador extends Persona implements Serializable{
 
     private int añoIngreso;
 

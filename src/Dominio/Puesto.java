@@ -1,8 +1,9 @@
 package Dominio;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Puesto {
+public class Puesto implements Serializable{
     private ArrayList<Tematica> temasRequeridos;
     private String nombre;
     private int tipoPuesto;
